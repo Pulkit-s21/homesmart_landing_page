@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HomeSmart</title>
+</head>
+
+<!-- ! Tailwind is always mobile first and then desktop so if we set smthng without media queries then that means its for the mobile limit set-->
+
+<body class="
+max-w-[2000px] 
+mx-auto 
+text-neutral-900 
+dark:text-neutral-200
+bg-white
+dark:bg-neutral-800
+">
+
+  <!-- NavBar -->
+  <nav class="mx-auto p-4 bg-amber-400">
+    <div class="container
+    mx-auto
+    flex
+    items-center
+    justify-between
+    ">
+
+  <!-- Comapny Logo -->
+    <a href="/" class="
+    focus:outline-none
+    lg:absolute
+    lg: left-1/2
+    lg:-translate-x-1/2
+    lg:top-9
+    z-20
+    "
+    aria-label="Go to homepage">
+  <!-- lg screen will hv left: 50% & to set to the center we use transform: translateX(-50%) and that is lg: -translate-x-1/2 -->
+      <img src="/images/logo.svg" width="200" class="w-48 md:w-64 lg:w-72" alt="Home Smart Logo"> 
+      <!-- setting width="200" is to set a max-width...media queries work but wont get any bigger than that -->
+    </a>
+
+  <!-- hamburger button -->
+    <button id="menu" class="
+    lg:hidden
+    text-neutral-900
+    dark:hover:text-white
+    hover:text-neutral-700
+    transition-colors
+    " aria-label="Open Menu" aria-expanded="false"
+    >
+      <!-- this is from heroicons.com made by makers of tailwind to just copy and put svg/jsx -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  
+  <!-- MenuBar -->
+  <!-- roll will tell this is where our menuitems are  -->
+    <div role="menuBar" class="
+    hidden
+    flex-col
+    gap-6
+    absolute
+    right-0
+    left-0
+    top-16
+    z-10
+    bg-amber-400
+    shadow-xl
+    text-center
+    text-lg
+    dark:text-neutral-900
+    p-4
+    items-center
+    lg:flex
+    lg:flex-row
+    lg:static
+    lg:shadow-none
+    lg:justify-between
+    lg:w-full
+    "
+    >
+    <!-- without lg:w-full they wont go all the way across -->
+      <a role="menuitems" class="
+      py-1
+      px-6
+      font-semibold
+      cursor-pointer
+      dark:text-neutral-900
+      dark:hover:text-white
+      hover:text-neutral-700
+      transition-colors
+      "
+      href="/">Home</a>
+      <!-- this has mr-auto on large screen so that the 1st 2nd stay on left then the logo and then the last 2 on right -->
+      <a role="menuitems" class="
+      py-1
+      px-6
+      font-semibold
+      dark:hover:text-white
+      hover:text-neutral-700
+      transition-colors
+      lg:mr-auto
+      "
+      href="/">Contact</a>
+      <a role="menuitems" class="
+      py-1
+      px-6
+      font-semibold
+      cursor-pointer
+      dark:hover:text-white
+      hover:text-neutral-700
+      transition-colors
+      "
+      href="/">Login</a>
+      <a role="menuitems" class="
+      py-2
+      px-6
+      font-semibold
+      cursor-pointer
+      bg-teal-900
+      hover:bg-white
+      rounded-md
+      shadow-xl
+      hover:shadow-none
+      text-white
+      hover:text-teal-900
+      transition-all
+      "
+      href="/">Sign Up</a>
+    </div>
+
+  </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="relative pt-16 md:pt-24 lg:pt-48">
+    <div class="
+    absolute
+    inset-0
+    bottom-8
+    md:bottom-24
+    xl:bottom-32
+    -z-10
+    bg-gradient-to-b
+    from-amber-400
+    to-amber-600
+    "
+    >
+  </div>
+    <div class="container
+    mx-auto
+    grid
+    grid-rows-1
+    place-items-end
+    px-2
+    "
+    > <!-- container contains items to certain length but not puts them at center so we use mx-auto-->
+      <img src="/images/couch.png" class="
+      row-start-1
+      row-end-2
+      col-start-1
+      col-end-2
+      mx-auto
+      "
+       alt="Couch">
+      <img src="/images/app.svg" class="
+      row-start-1
+      row-end-2
+      col-start-1
+      col-end-2
+      mx-auto
+      w-40
+      sm:w-52
+      md:w-64
+      lg:w-72
+      "
+       alt="App">
+    </div>
+  </header>
+
+  <!-- main -->
+  <main class="
+  grid
+  gap-12
+  sm:gap-16
+  md:gap-24
+  lg:gap-32
+  px-8
+  overflow-hidden
+  "
+  >
+
+  <!-- Download Button -->
+  <a href="#" class="
+  flex
+  gap-2
+  py-2
+  px-6
+  mx-auto
+  my-12
+  font-semibold
+  cursor-pointer
+  dark:text-neutral-900
+  bg-amber-400
+  hover:bg-white
+  rounded-md
+  shadow-xl
+  hover:shadow-none
+  transition-all
+  ">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+  </svg>
+    <span>Download the app</span>
+  </a>
+
+  <!-- Card Section -->
+  <section aria-labelledby="qualities" class="relative py-4">
+
+    <!-- dots img -->
+    <img src="/images/dots.svg" alt="" aria-hidden="true" class="
+    absolute
+    top-1/2
+    -translate-y-1/2
+    hidden
+    lg:block
+    -left-24
+    xl:-left-7
+    ">
+    <img src="/images/dots.svg" alt="" aria-hidden="true" class="
+    absolute
+    top-1/2
+    -translate-y-1/2
+    hidden
+    lg:block
+    -right-24
+    xl:-right-7
+    ">
+
+    <h2 id="qualities" class="sr-only">Our Qualities</h2> <!-- we are hiding this and only added it only for the screen reader -->
+    
+    <div class="container
+    mx-auto
+    max-w-5xl
+    flex
+    gap-20
+    flex-wrap
+    items-start
+    justify-center
+    md:justify-between
+    ">
+      <div class="grid
+      gap-4
+      justify-items-center
+      text-center
+      md:flex-1
+      ">
+        <div class="
+        rounded-full
+        border-8
+        border-amber-400
+        p-4
+        ">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Safe</h3>
+        <p class="text-lg">Our products are secure and private out-of-the-box</p>
+      </div>
+
+      <div class="grid
+      gap-4
+      justify-items-center
+      text-center
+      md:flex-1
+      ">
+        <div class="
+        rounded-full
+        border-8
+        border-amber-400
+        p-4
+        ">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Efficient</h3>
+        <p class="text-lg">Feel good about your wallet and environment</p>
+      </div>
+
+      <div class="grid
+      gap-4
+      justify-items-center
+      text-center
+      md:flex-1
+      ">
+        <div class="
+        rounded-full
+        border-8
+        border-amber-400
+        p-4
+        ">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+        </svg>
+        </div>
+        <h3 class="text-3xl font-bold">Proven</h3>
+        <p class="text-lg">Leading the Smart Home world for 10 years</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Section -->
+  <section aria-labelledby="partners" class="
+  grid
+  gap-8
+  py-4 
+  text-center
+  place-items-center
+  ">
+
+  <!-- Text content -->
+  <div class="grid gap-4">
+    <h2 id="partners" class="
+    text-amber-400
+      text-5xl 
+      md:text-6xl 
+      lg:text-7xl
+      font-bold
+      ">Our Partners
+    </h2>
+    <p class="
+    w-full
+    max-w-xl
+    text-xl
+    font-medium
+    ">
+      We've partnered with hundreds of smart home brands to help you create a smart home that fits your needs and doesn't lock you in.
+    </p>
+  </div>
+
+  <!-- Partner images -->
+  <div class="flex flex-wrap mx-auto gap-8 md:gap-2xl max-w-2xl justify-center">
+    <div class="bg-white dark:bg-neutral-400 rounded-md shadow-md dark:shadow-xl p-4">
+      <img src="/images/partner1.svg" alt="Partner" class="w-16 h-16">
+    </div>
+    <div class="bg-white dark:bg-neutral-400 rounded-md shadow-md dark:shadow-xl p-4">
+      <img src="/images/partner2.svg" alt="Partner" class="w-16 h-16">
+    </div>
+    <div class="bg-white dark:bg-neutral-400 rounded-md shadow-md dark:shadow-xl p-4">
+      <img src="/images/partner3.svg" alt="Partner" class="w-16 h-16">
+    </div>
+    <div class="bg-white dark:bg-neutral-400 rounded-md shadow-md dark:shadow-xl p-4">
+      <img src="/images/partner4.svg" alt="Partner" class="w-16 h-16">
+    </div>
+    <div class="bg-white dark:bg-neutral-400 rounded-md shadow-md dark:shadow-xl p-4">
+      <img src="/images/partner5.svg" alt="Partner" class="w-16 h-16">
+    </div>
+    <div class="bg-white dark:bg-neutral-400 rounded-md shadow-md dark:shadow-xl p-4">
+      <img src="/images/partner6.svg" alt="Partner" class="w-16 h-16">
+    </div>
+    <div class="bg-white dark:bg-neutral-400 rounded-md shadow-md dark:shadow-xl p-4">
+      <img src="/images/partner7.svg" alt="Partner" class="w-16 h-16">
+    </div>
+  </div>
+  </section>
+
+  <!-- Home CTA Section -->
+  <section aria-labelledby="home" class="relative">
+    <div class="flex 
+    flex-wrap-reverse 
+    justify-center 
+    gap-8
+    ">
+      <div class="flex 
+      gap-6 
+      flex-wrap 
+      flex-col 
+      items-start 
+      lg:justify-center
+      ">
+
+      <!-- Text content -->
+        <div class="flex flex-wrap flex-col items-start gap-2">
+            <h2 id="home" class="text-4xl 
+            md:text-5xl 
+            lg:text-6xl 
+            text-neutral-900
+            dark:text-white
+            font-bold
+            ">Relax, you're home!
+          </h2>
+          <p class="
+          max-w-md
+          text-lg
+          ">
+            All our supported hardware includes traditional inputs so you can integrate our products into your house in a way that's best for everyone
+          </p>
+        </div>
+
+        <!-- button -->
+        <a href="#" class="
+            flex
+            gap-2
+            py-2
+            px-6
+            font-semibold
+            cursor-pointer
+            dark:text-neutral-900
+            bg-amber-400
+            hover:bg-white
+            rounded-md
+            shadow-xl
+            hover:shadow-none
+            transition-all
+            ">
+            <span>Sign Up</span>
+        </a>
+
+      </div>
+      <img src="/images/table.png" alt="Table">
+    </div>
+
+      <!-- bottom background -->
+      <div class="
+      bg-teal-800
+      -mx-8
+      -bottom-8
+      -z-10
+      xl:h-48
+      xl:absolute
+      xl:w-screen
+      "></div>
+
+      <!-- circle..but not using it cz I dont like it -->
+      <!-- <div class="
+      absolute
+      -bottom-6
+      -right-32
+      -z-20
+      aspect-square
+      md:border-8
+      border-amber-400
+      rounded-full
+      lg:w-80
+      xl:max-w-xl
+      "></div> -->
+  </section>
+
+  <!-- Form Section -->
+  <section aria-labelledby="contact" class="
+  container 
+  mx-auto 
+  px-8
+  overflow-hidden
+  ">
+    <div class="flex
+    flex-wrap
+    justify-center
+    gap-12 
+    md:gap-6
+    lg:gap-20
+    ">
+      <div class="md:flex-1 
+      md:max-w-sm 
+      relative
+      ">
+
+        <img src="/images/lamp.png" alt="Lamp" class="mx-auto">
+
+        <!-- Form download app button -->
+        <a href="#" class="
+        flex
+        gap-2
+        py-2
+        px-6
+        mx-auto
+        mt-12
+        md:mb-12
+        w-max
+        font-semibold
+        cursor-pointer
+        dark:text-neutral-900
+        bg-amber-400
+        hover:bg-white
+        rounded-md
+        shadow-xl
+        hover:shadow-none
+        transition-all
+        ">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+          <span>Download the app</span>
+        </a>
+
+        <!-- Form App svg -->
+        <img src="/images/app.svg" alt="App" width="150" class="hidden 
+        md:block 
+        drop-shadow-xl 
+        absolute
+        left-1/2
+        -translate-x-1/2
+        max-w-16
+        xl:max-w-xs
+        ">
+      </div>
+
+      <form class="
+      relative
+      border-2
+      border-neutral-500
+      p-6
+      rounded-sm
+      grid
+      gap-8
+      md:flex-1
+      my-4
+      md:my-12
+      xl:my-16
+      bg-white
+      dark:bg-neutral-800
+      w-full
+      ">
+      <h2 id="contact" class="text-3xl mb-4 font-bold">Let's Connect</h2>
+      
+      <!-- name -->
+      <div class="relative">
+        <input type="text" id="name" class="
+        peer
+        w-full
+        my-2 
+        dark:text-neutral-900
+        placeholder-transparent
+        " placeholder="Your Name">
+        
+        <label for="name" class="
+        text-neutral-500
+        dark:text-white
+        text-sm
+        font-bold
+        uppercase
+        absolute
+        -top-4
+        left-2
+        -translate-y-1/2 
+        transition-all
+        peer-placeholder-shown:left-4
+        peer-placeholder-shown:top-1/2
+        peer-placeholder-shown:text-neutral-900
+        peer-focus:-top-4
+        peer-focus:left-2
+        peer-focus:text-neutral-600
+        dark:peer-focus:text-white
+        ">Your Name
+      </label>
+      </div>
+
+      <!-- email -->
+      <div class="relative">
+        <input type="text" id="name" class="
+        peer
+        w-full
+        my-2 
+        dark:text-neutral-900
+        placeholder-transparent
+        " placeholder="Your Email">
+        
+        <label for="name" class="
+        text-neutral-500
+        dark:text-white
+        text-sm
+        font-bold
+        uppercase
+        absolute
+        -top-4
+        left-2
+        -translate-y-1/2 
+        transition-all
+        peer-placeholder-shown:left-4
+        peer-placeholder-shown:top-1/2
+        peer-placeholder-shown:text-neutral-900
+        peer-focus:-top-4
+        peer-focus:left-2
+        peer-focus:text-neutral-600
+        dark:peer-focus:text-white
+        ">Your Email
+      </label>
+      </div>
+
+      <!-- Textarea -->
+      <div class="relative">
+        <textarea type="content" id="content" col="20" rows="5" class="
+        peer
+        w-full
+        my-2 
+        resize-none
+        dark:text-neutral-900
+        placeholder-transparent
+        " placeholder="How can we help?">
+      </textarea>
+        
+        <label for="name" class="
+        text-neutral-500
+        dark:text-white
+        text-sm
+        font-bold
+        uppercase
+        absolute
+        -top-3
+        left-2
+        -translate-y-1/2 
+        transition-all
+        peer-placeholder-shown:left-4
+        peer-placeholder-shown:top-6
+        peer-placeholder-shown:text-neutral-900
+        peer-focus:-top-4
+        peer-focus:left-2
+        peer-focus:text-neutral-600
+        dark:peer-focus:text-white
+        ">How can we help?
+      </label>
+      </div>
+
+      <!-- form signup button -->
+      <a role="menuitems" class="
+      py-2
+      px-6
+      w-max
+      font-semibold
+      cursor-pointer
+      bg-amber-400
+      hover:bg-white
+      rounded-md
+      shadow-xl
+      hover:shadow-none
+      text-neutral-900
+      transition-all
+      "
+      href="/">Sign Up</a>
+      </form>
+    </div>
+  </section>
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
